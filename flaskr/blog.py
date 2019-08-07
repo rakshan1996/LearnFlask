@@ -18,13 +18,13 @@ def index():
 		).fetchAll()
 	return render_template('blog/index.html',posts=posts)
 
-@bp.route('/create',methods=('GET','POST'))
-@login_required
-def create():
-	if request.method == 'POST':
-		title=request.form['title']
-		body=request.form['body']
-		error=None
+# @bp.route('/create',methods=('GET','POST'))
+# @login_required
+# def create():
+# 	if request.method == 'POST':
+# 		title=request.form['title']
+# 		body=request.form['body']
+# 		error=None
 
-		if title 
+# 		if title 
 
