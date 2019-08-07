@@ -1,5 +1,8 @@
 import os
 from flask import Flask
+from . import db
+
+
 
 def create_app(test_config=None):
 	#create and configure the app
@@ -15,7 +18,11 @@ def create_app(test_config=None):
 	else:
 		app.config.from_mapping(test_config)
 
+
 	#ensure the instance folder exsists
+
+
+
 
 	try: 
 		os.makedirs(app.instance_path)
@@ -23,6 +30,9 @@ def create_app(test_config=None):
 		pass
 
 
-@app.route('/')
-def hello_world():
-	return 'Hello Devil, Welcome to the world of Python.'
+	@app.route('/')
+	def hello_world():
+		return 'Hello Devil, Welcome to the world of Python.'
+
+	db.init_app(app)
+	return app
