@@ -34,9 +34,9 @@ def create_app(test_config=None):
 		pass
 
 
-	@app.route('/')
-	def hello_world():
-		return 'Hello Devil, Welcome to the world of Python.'
+	# @app.route('/')
+	# def hello_world():
+	# 	return 'Hello Devil, Welcome to the world of Python.'
 
 	db.init_app(app)
 	app.register_blueprint(auth.bp)
